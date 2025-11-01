@@ -1,4 +1,6 @@
 #include <stdio.h> 
+#include <stdlib.h>
+#include <time.h>
 
 // Desafio Super Trunfo - Países
 // Tema 2 - Comparação das Cartas
@@ -17,6 +19,10 @@ int main() {
    float area1, area2;
    float PIB1, PIB2;
    int pontoturistico1, pontoturistico2;
+   float densidadedemografica1 = (float) populaçao1 / area1;
+   float densidadedemografica2 = (float) populaçao2 / area2;
+   int opçao;
+
 
     // Cadastro das Cartas:
     // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
@@ -28,61 +34,174 @@ int main() {
     // scanf("%s", codigo);
     // 
     // (Repita para cada propriedade)
+   printf("MENU PRINCIPAL\n");
+   printf("1.Iniciar Jogo com o atributo População\n");
+   printf("2.Iniciar Jogo com o atributo Área\n");
+   printf("3.Iniciar Jogo com o atributo PIB\n");
+   printf("4.Iniciar Jogo com o atributo Ponto Turístico\n");
+   printf("5.Iniciar Jogo com o atributo Densidade Demográfica\n");
+   printf("Sair do Jogo\n");
+   printf("Escolha Uma Opçao: \n");
+   scanf("%d", &opçao);
 
-   printf("Bem vindo ao sistema de cadastro de cartas!\n");
-   printf("Digite o nome do primeiro estado: \n");
-    scanf("%s", estado1);
-   printf("Digite o codigo do primeiro estado: \n");
-    scanf("%s", codigo1);
-   printf("Digite o nome da capital do primeiro estado: \n");
-    scanf("%s", cidade1);
-   printf("Digite a populaçao do primeiro estado: \n");
-    scanf("%d", &populaçao1);
-   printf("Digite a area do primeiro estado: \n");
-    scanf("%f", &area1);
-   printf("Digite o PIB do primeiro estado: \n");
-    scanf("%f", &PIB1);
-   printf("Digite o numero de pontos turisticos do primeiro estado: \n");
-    scanf("%d", &pontoturistico1);
 
-   printf("Digite o nome do segundo estado: \n");
-    scanf("%s", estado2);
-   printf("Digite o codigo do segundo estado: \n");
-    scanf("%s", codigo2);
-   printf("Digite o nome da capital do segundo estado: \n");
-    scanf("%s", cidade2);
-   printf("Digite a populaçao do segundo estado: \n");
-    scanf("%d", &populaçao2);
-   printf("Digite a area do segundo estado: \n");
-    scanf("%f", &area2);
-   printf("Digite o PIB do segundo estado: \n");
-    scanf("%f", &PIB2);
-   printf("Digite o numero de pontos turisticos do segundo estado: \n");
-    scanf("%d", &pontoturistico2);
-    
-    printf("CARTA DO PRIMEIRO ESTADO\n");
-    printf("ESTADO: %s\n", estado1);
-    printf("CODIGO: %s\n", codigo1);
-    printf("CAPITAL: %s\n", cidade1);
-    printf("POPULAÇAO: %d\n", populaçao1);
-    printf("AREA: %f\n", area1);
-    printf("PIB: %f\n", PIB1);
-    printf("PONTOS TURISTICOS: %d\n", pontoturistico1);
-    printf("DENSIDADE POPULACIONAL DO PRIMEIRO ESTADO: %f\n", populaçao1/area1);
-    printf("PIB PER CAPITA DO PRIMEIRO ESTADO: %f\n", PIB1/populaçao1);
 
-    printf("CARTA DO SEGUNDO ESTADO\n");
-    printf("ESTADO: %s\n", estado2);
-    printf("CODIGO: %s\n", codigo2);
-    printf("CAPITAL: %s\n", cidade2);
-    printf("POPULAÇAO: %d\n", populaçao2);
-    printf("AREA: %f\n", area2);
-    printf("PIB: %f\n", PIB2);
-    printf("PONTOS TURISTICOS: %d\n", pontoturistico2);
-    printf("DENSIDADE POPULACIONAL DO PRIMEIRO ESTADO: %f\n", populaçao2/area2);
-    printf("PIB PER CAPITA DO PRIMEIRO ESTADO: %f\n", PIB2/populaçao2);
+   switch (opçao)
+   {
+    case 1:
+     printf("digite o primeiro estado: \n");
+     scanf("%s", &estado1);
+     printf("digite a primeira cidade: \n");
+     scanf("%s", &cidade1);
+     printf("digite o primeiro código: \n");
+     scanf("%s", &codigo1);
+     
+     printf("digite o segundo estado: \n");
+     scanf("%s", &estado2);
+     printf("digite a segunda cidade: \n");
+     scanf("%s", &cidade2);
+     printf("digite o segundo código: \n");
+     scanf("%s", &codigo2);
 
-     // Comparação de Cartas:
+     srand(time(0));
+     populaçao1 = rand() % 1000 + 1;
+      printf("População 1: %d\n", populaçao1);
+     populaçao2 = rand() % 1000 + 1;
+      printf("População 2: %d\n", populaçao2);
+      if (populaçao1 > populaçao2){
+        printf("A Carta 1 ganhou!\n");
+      } else if (populaçao1 < populaçao2){
+        printf("A Carta 2 ganhou!\n");
+      } else {
+        printf("Houve Um Empate!");
+      }
+     break;
+    case 2:
+     printf("digite o primeiro estado: \n");
+     scanf("%s", &estado1);
+     printf("digite a primeira cidade: \n");
+     scanf("%s", &cidade1);
+     printf("digite o primeiro código: \n");
+     scanf("%s", &codigo1);
+     
+     printf("digite o segundo estado: \n");
+     scanf("%s", &estado2);
+     printf("digite a segunda cidade: \n");
+     scanf("%s", &cidade2);
+     printf("digite o segundo código: \n");
+     scanf("%s", &codigo2);
+
+     srand(time(0));
+     area1 = rand() % 1000 + 1;
+     printf("Área 1: %f\n", area1);
+     area2 = rand() % 1000 + 1;
+     printf("Área 2: %f\n", area2);
+      if (area1 > area2){
+        printf("A Carta 1 ganhou!\n");
+      } else if (area1 < area2) {
+        printf("A Carta 2 ganhou!\n");
+      } else {
+        printf("Houve Um Empate!");
+      }
+     break;
+    case 3:
+      printf("digite o primeiro estado: \n");
+     scanf("%s", &estado1);
+     printf("digite a primeira cidade: \n");
+     scanf("%s", &cidade1);
+     printf("digite o primeiro código: \n");
+     scanf("%s", &codigo1);
+     
+     printf("digite o segundo estado: \n");
+     scanf("%s", &estado2);
+     printf("digite a segunda cidade: \n");
+     scanf("%s", &cidade2);
+     printf("digite o segundo código: \n");
+     scanf("%s", &codigo2);
+
+     srand(time(0));
+     PIB1 = rand() % 1000 + 1;
+     printf("PIB 1: %f\n", PIB1);
+     PIB2 = rand() % 1000 + 1;
+     printf("PIB 2: %f\n", PIB2);
+      if (PIB1 > PIB2){
+        printf("A Carta 1 ganhou!\n");
+      } else if (PIB1 < PIB2) {
+        printf("A Carta 2 ganhou!\n");
+      } else {
+        printf("Houve Um Empate!");
+      }
+     break;
+    case 4:
+      printf("digite o primeiro estado: \n");
+     scanf("%s", &estado1);
+     printf("digite a primeira cidade: \n");
+     scanf("%s", &cidade1);
+     printf("digite o primeiro código: \n");
+     scanf("%s", &codigo1);
+     
+     printf("digite o segundo estado: \n");
+     scanf("%s", &estado2);
+     printf("digite a segunda cidade: \n");
+     scanf("%s", &cidade2);
+     printf("digite o segundo código: \n");
+     scanf("%s", &codigo2);
+
+     srand(time(0));
+     pontoturistico1 = rand() % 10 + 1;
+     printf("Ponto Turístico 1: %d\n", pontoturistico1);
+     pontoturistico2 = rand() % 10 + 1;
+     printf("Ponto Turístico 2: %d\n", pontoturistico2);
+      if (pontoturistico1 >= pontoturistico2){
+        printf("A Carta 1 ganhou!\n");
+      } else if (pontoturistico1 < pontoturistico2){
+        printf("A Carta 2 ganhou!\n");
+      } else {
+        printf("Houve Um Empate!");
+      }
+     break;
+    case 5:
+      printf("digite o primeiro estado: \n");
+     scanf("%s", &estado1);
+     printf("digite a primeira cidade: \n");
+     scanf("%s", &cidade1);
+     printf("digite o primeiro código: \n");
+     scanf("%s", &codigo1);
+     
+     printf("digite o segundo estado: \n");
+     scanf("%s", &estado2);
+     printf("digite a segunda cidade: \n");
+     scanf("%s", &cidade2);
+     printf("digite o segundo código: \n");
+     scanf("%s", &codigo2);
+
+
+     
+     srand(time(0));
+     populaçao1 = rand() % 1000 + 1;
+     printf("População 1: %d\n", populaçao1);
+     populaçao2 = rand() % 1000 + 1;
+     printf("População 2: %d\n", populaçao2);
+     area1 = rand() % 1000 + 1;
+     printf("Área 1: %f\n", area1);
+     area2 = rand() % 1000+ 1;
+     printf("Área 2: %f\n", area2);
+      if (densidadedemografica1 < densidadedemografica2){
+        printf("A Carta 1 ganhou!\n");
+      } else if (densidadedemografica1 > densidadedemografica2) {
+        printf("A Carta 2 ganhou!\n");
+      } else {
+        printf("Houve Um Empate!");
+      }
+     break;
+    case 6:
+     printf("Saindo do Jogo,Volte Sempre:>\n");
+     break;
+    default:
+     printf("Opção Inválida,Tente Novamente!");
+     break; 
+    }
+     // Comparação de Cartas:                                                                                                       
     // Desenvolva a lógica de comparação entre duas cartas.
     // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
 
@@ -92,12 +211,6 @@ int main() {
     // } else {
     //     printf("Cidade 2 tem maior população.\n");
     // }
-
-    if (populaçao1 > populaçao2){
-        printf("A CARTA DO PRIMEIRO ESTADO VENCEU!\n");
-    } else {
-        printf("A CARTA DO SEGUNDO ESTADO VENCEU!\n");
-    }
     // Exibição dos Resultados:
     // Após realizar as comparações, exiba os resultados para o usuário.
     // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
